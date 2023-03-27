@@ -69,7 +69,7 @@ const CrearCuenta = ({setUsuario,setToken,dir}) => {
                 "apellido": apellidoValue,
                 "email": emailValue,
                 "password": passwordValue,
-                "rolId": 1,
+                "rolId": 6,
                 "id_Ciudad": 13
             })
             const url = `http://${dir}:8080/usuarios/agregar`
