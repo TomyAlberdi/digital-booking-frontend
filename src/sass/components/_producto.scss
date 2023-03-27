@@ -1,0 +1,396 @@
+@use "./var";
+
+article.Producto {
+    .productTitle {
+        padding: 1.5vh 3vw;
+        color: var.$grisClaro;
+        font-size: 1.8rem;
+        border-bottom: 2px solid var.$naranja;
+        padding-bottom: 1vh;
+    }
+    section.headerProducto {
+        @include var.flex-container(row,space-between,center);
+        width: 100vw;
+        background-color: var.$naranja;
+        color: white;
+        height: 8vh;
+        padding: 0 3vw;
+        h1 {
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+        a {
+            i {
+                font-size: 2.5rem;
+                color: white;
+                text-decoration: none;
+            }
+        }
+    }
+    section.locationProducto {
+        @include var.flex-container(row,space-between,center);
+        width: 100vw;
+        height: 8vh;
+        background-color: var.$grisClaro;
+        color: white;
+        padding: 0 3vw;
+        div {
+            &:nth-child(1) {
+                @include var.flex-container(row,left,center);
+            }
+            i {
+                margin-right: 1vw;
+            }
+        }
+    }
+    section.imagesProducto {
+        position: relative;
+        padding: 1.5vw 3vw;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr); 
+        gap: 1vw;
+        height: 60vh;
+        width: 100vw;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .div1 { grid-area: 1 / 1 / 3 / 3; }
+        .div2 { grid-area: 1 / 3 / 2 / 4; }
+        .div3 { grid-area: 1 / 4 / 2 / 5; }
+        .div4 { grid-area: 2 / 3 / 3 / 4; }
+        .div5 { grid-area: 2 / 4 / 3 / 5; } 
+        button {
+            position: absolute;
+            right: 4vw;
+            bottom: 5vh;
+            padding: 1vh 1vw;
+            border: none;
+            color: white;
+            background-color: var.$naranja;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    }
+    .mySwiper {
+        display: none;
+    }
+    section.descriptionProducto {
+        padding: 1vh 3vw;
+        color: var.$grisClaro;
+    }
+    section.caractProducto {
+        div.iconsCaract {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr); 
+            gap: 3vw;
+            padding: 5vh 3vw;
+            span {
+                color: var.$grisClaro;
+                i {
+                    font-size: 1.6rem;
+                    color: var.$naranja;
+                    padding-right: 1vw;
+                }
+            }
+            .div1 { grid-area: 1 / 1 / 2 / 2; }
+            .div2 { grid-area: 1 / 2 / 2 / 3; }
+            .div3 { grid-area: 1 / 3 / 2 / 4; }
+            .div4 { grid-area: 1 / 4 / 2 / 5; }
+            .div5 { grid-area: 2 / 1 / 3 / 2; }
+            .div6 { grid-area: 2 / 2 / 3 / 3; }
+            .div7 { grid-area: 2 / 3 / 3 / 4; } 
+        }
+    }
+    section.politicProducto {
+        section {
+            @include var.flex-container(row,flex-start,flex-start);
+            flex-wrap: wrap;
+            gap: 3vw;
+            padding: 5vh 3vw;
+            div {
+                width: 25vw;
+                color: var.$grisClaro;
+                h3 {
+                    font-size: 1.3rem;
+                    padding-bottom: 2vh;
+                }
+                ul {
+                    list-style-type: none;
+                    li {
+                        padding: 1vh 0;
+                    }
+                }
+            }
+        }
+    }
+    section.disponibilidad {
+        padding: 3vh 3vw;
+        background-color: var.$grisClaro;
+        h2 {
+            color: white;
+            font-size: 1.8rem;
+        }        
+        div.container {
+            padding-top: 3vh;
+            gap: 3vw;
+            @include var.flex-container(row,space-between,center);
+            .calendar {
+                height: 52vh;
+                width: 60vw;
+                border-radius: 5px;
+                background-color: var.$grisBlanco;
+                .wrap {
+                    .controlWrap {
+                        .controls {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            flex-direction: row;
+                            margin: 3vh;
+                            .btn {
+                                font-size: 18px;
+                                border: none;
+                                padding: 13px 20px;
+                                cursor: pointer;
+                                border-radius: 10px;
+                                color: white;
+                                background-color: var.$naranja;
+                                &:hover {
+                                    opacity: 0.8;
+                                }
+                                &.back {
+                                    &::before {
+                                        content: "< "
+                                    }
+                                }
+                                &.next {
+                                    &::after {
+                                        content: " >"
+                                    }
+                                }
+                            }   
+                        }
+                    }
+                    .year {
+                        @include var.flex-container(row,space-evenly,flex-start);
+                        flex-wrap: wrap;
+                        .month {
+                            padding: 0 10px;
+                            margin: 0 0 20px;
+                            box-sizing: border-box;
+                            width: 40%;
+                            .content {
+                                display: flex;
+                                flex-direction: row;
+                                flex-wrap: wrap;
+                            }
+                            .monthName {
+                                font-size: 1.2rem;
+                                text-align: center;
+                                margin: 0 auto 20px;
+                            }
+                            .dayOfTheWeek {
+                                .day {
+                                    font-weight: 800;
+                                }
+                            }
+                            .day {
+                                width: 14.166666666667%;
+                                text-align: center;
+                                padding: 6px;
+                                box-sizing: border-box;
+                                &.booked {
+                                    opacity: 0.4;
+                                }
+                                &:not(.booked) {
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+                }
+                &.singleCol {
+                    display: none;
+                }
+
+            }
+            .reserva {
+                background-color: var.$grisBlanco;
+                padding: 1.5vw;
+                border-radius: 5px;
+                color: var.$grisOscuro;
+                @include var.flex-container(column,center,flex-start);
+                a, button {
+                    background-color: var.$naranja;
+                    text-decoration: none;
+                    text-align: center;
+                    border: none;
+                    color: white;
+                    width: 100%;
+                    border-radius: 5px;
+                    padding: 1.5vh 0;
+                    margin-top: 1vh;
+                    cursor: pointer;
+                    &:hover {
+                        opacity: 0.8;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+/* Query Mobile */
+@media screen and (max-width: 765px) { 
+    article.Producto {
+        section.headerProducto {
+            height: 10vh;
+        }
+        section.imagesProducto {
+            display: none;
+        }
+        .mySwiper {
+            display: flex;
+            height: 40vh;
+            .swiper-wrapper {
+                .swiper-slide {
+                    img {
+                        width: 100%;
+                        height: inherit;
+                        object-fit: cover;
+                    }   
+                }  
+            }       
+            .swiper-pagination {
+                color: white;
+            }
+        }
+        section.caractProducto {
+            h2 {
+                font-size: 1.3rem;
+            }
+            div.iconsCaract {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(7, 1fr); 
+                .div2 { grid-area: 2 / 1 / 3 / 2; }
+                .div3 { grid-area: 3 / 1 / 4 / 2; }
+                .div4 { grid-area: 4 / 1 / 5 / 2; }
+                .div5 { grid-area: 5 / 1 / 6 / 2; }
+                .div6 { grid-area: 6 / 1 / 7 / 2; }
+                .div7 { grid-area: 7 / 1 / 8 / 2; } 
+            }
+        }
+        section.politicProducto {
+            section {
+                div {
+                    width: 90vw;
+                }
+            }
+        }
+        section.disponibilidad {
+            div.container {
+                flex-direction: column;
+                .calendar {
+                    &.twoCol {
+                        display: none;
+                    }
+                    &.singleCol {
+                        display: block;
+                        width: 90vw;
+                        height: 48vh;
+                        .wrap {
+                            .year {
+                                height: 46vh;
+                                .month {
+                                    height: inherit;
+                                    width: inherit;
+                                }
+                            }
+                        }
+                    }
+                }
+                .reserva {
+                    width: 90vw;
+                    align-items: center;
+                }
+            }
+        }
+    }
+}
+
+/* Query Tablet */
+@media screen and (min-width: 766px) and (max-width: 1023px) {
+    article.Producto {
+        section.headerProducto {
+            height: 6vh;
+        }
+        section.locationProducto {
+            height: 6vh;
+        }
+        section.imagesProducto {
+            display: none;
+        }
+        .mySwiper {
+            display: flex;
+            height: 50vh;
+            .swiper-wrapper {
+                .swiper-slide {
+                    img {
+                        width: 100%;
+                        height: inherit;
+                        object-fit: cover;
+                    }   
+                }  
+            }   
+            .swiper-pagination {
+                color: white;
+            }
+        }
+        section.caractProducto {
+            h2 {
+                font-size: 1.4rem;
+            }
+            div.iconsCaract {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(4, 1fr);
+                .div3 { grid-area: 2 / 1 / 3 / 2; }
+                .div4 { grid-area: 2 / 2 / 3 / 3; }
+                .div5 { grid-area: 3 / 1 / 4 / 2; }
+                .div6 { grid-area: 3 / 2 / 4 / 3; }
+                .div7 { grid-area: 4 / 1 / 5 / 2; } 
+            }
+        }
+        section.politicProducto {
+            section {
+                div {
+                    width: 40vw;
+                }
+            }
+        }
+        section.disponibilidad {
+            div.container {
+                flex-direction: column;
+                .calendar {
+                    &.twoCol {
+                        width: 90vw;
+                        height: 40vh;
+                    }
+                    &.singleCol {
+                        display: none;
+                    }
+                }
+                .reserva {
+                    width: 90vw;
+                    flex-direction: row;
+                    align-items: center;
+                }
+            }
+        }
+    }    
+}

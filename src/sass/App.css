@@ -1,0 +1,2016 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap");
+header {
+  position: fixed;
+  z-index: 6;
+  width: 100vw;
+  height: 10vh;
+  padding: 0 3vw;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: white;
+}
+header section.logo {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1vw;
+}
+header section.logo a {
+  text-decoration: none;
+}
+header section.logo img {
+  width: 4vw;
+}
+header section.logo h3 {
+  font-size: 1.3rem;
+  font-weight: lighter;
+  font-style: italic;
+  color: rgb(49, 54, 63);
+}
+header section.mobileMenuButton {
+  display: none;
+}
+header section.accountInfoContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+}
+header section.accountInfoContainer section.adminMenu {
+  margin-right: 1.5vw;
+  padding: 2vh 1.5vw;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  border-right: 2px solid rgb(240, 87, 45);
+  height: 100%;
+}
+header section.accountInfoContainer section.adminMenu a {
+  text-decoration: none;
+  font-weight: bold;
+  color: rgb(49, 54, 63);
+}
+header section.accountInfoContainer section.accountInfo {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1vw;
+}
+header section.accountInfoContainer section.accountInfo div.userIcon {
+  width: 3vw;
+  height: 3vw;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  padding: 1.4vh;
+  margin-bottom: 1vh;
+  background-color: rgb(49, 54, 63);
+  color: white;
+  border-radius: 50%;
+}
+header section.accountInfoContainer section.accountInfo div.nombreUsuario {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+}
+header section.accountInfoContainer section.accountInfo div.nombreUsuario h3 {
+  color: rgb(240, 87, 45);
+}
+header section.accountInfoContainer section.accountInfo i {
+  cursor: pointer;
+}
+header section.account {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1vw;
+}
+header section.account a {
+  text-decoration: none;
+  color: inherit;
+}
+header section.account a button {
+  background-color: inherit;
+  border: 1px solid rgb(240, 87, 45);
+  color: rgb(240, 87, 45);
+  border-radius: 5px;
+  padding: 1.5vh 3.5vw;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+div.mobileMenu {
+  display: none;
+}
+
+/* Query Mobile */
+@media screen and (max-width: 765px) {
+  header section.logo img {
+    width: 18vw;
+  }
+  header section.logo a:nth-child(2) {
+    display: none;
+  }
+  header section.mobileMenuButton {
+    display: block;
+    padding: 2vh;
+    cursor: pointer;
+  }
+  header section.mobileMenuButton i {
+    font-size: 2rem;
+    color: rgb(49, 54, 63);
+  }
+  header section.account, header section.accountInfoContainer {
+    display: none;
+  }
+  div.mobileMenu {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -80vw;
+    transition: all 0.3s ease-in;
+    background-color: white;
+    width: 80vw;
+    height: 100vh;
+    z-index: 10;
+  }
+  div.mobileMenu.open {
+    transition: all 0.3s ease-in;
+    right: 0;
+    position: fixed;
+  }
+  div.mobileMenu section.menuHeader {
+    height: 30vh;
+    background-color: rgb(240, 87, 45);
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+  }
+  div.mobileMenu section.menuHeader div.mobileMenuButton {
+    display: block;
+    padding: 2vh;
+    cursor: pointer;
+  }
+  div.mobileMenu section.menuHeader div.mobileMenuButton i {
+    font-size: 2rem;
+    color: white;
+  }
+  div.mobileMenu section.menuHeader div.mobileAccount {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 2vw 2vw 0;
+    align-self: flex-end;
+  }
+  div.mobileMenu section.menuHeader div.mobileAccount div.userIcon {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    height: 12vw;
+    width: 12vw;
+    padding: 1.4vh;
+    margin-bottom: 1vh;
+    background-color: white;
+    color: rgb(49, 54, 63);
+    border-radius: 50%;
+  }
+  div.mobileMenu section.menuHeader div.mobileAccount h3.name {
+    color: rgb(49, 54, 63);
+  }
+  div.mobileMenu section.menuHeader h2 {
+    align-self: flex-end;
+    font-size: 1.4rem;
+    padding: 1.4vw;
+  }
+  div.mobileMenu section.mobileLogin {
+    padding: 0 2vw;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  div.mobileMenu section.mobileLogin a {
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    text-align: end;
+    padding: 2vh 0;
+  }
+  div.mobileMenu section.mobileLogin a:nth-child(1) {
+    border-bottom: 1px solid rgb(49, 54, 63);
+  }
+  div.mobileMenu section.menuFooter {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0 3vw;
+    color: rgb(49, 54, 63);
+  }
+  div.mobileMenu section.menuFooter h3 {
+    width: inherit;
+    text-align: end;
+    padding-bottom: 1vh;
+    border-bottom: 1px solid rgb(49, 54, 63);
+  }
+  div.mobileMenu section.menuFooter h3 span {
+    color: rgb(240, 87, 45);
+    cursor: pointer;
+  }
+  div.mobileMenu section.menuFooter div.socialMedia {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 3vh 0;
+    gap: 2vh;
+  }
+  div.mobileMenu section.menuFooter div.socialMedia i {
+    cursor: pointer;
+    font-size: 1.6rem;
+  }
+}
+/* Query Tablet */
+@media screen and (min-width: 766px) and (max-width: 1023px) {
+  header section.logo img {
+    width: 10vw;
+  }
+  header section.logo a:nth-child(2) {
+    display: none;
+  }
+  header section.account button {
+    padding: 1.5vh 6vw;
+  }
+  header section.accountInfoContainer section.accountInfo div.userIcon {
+    width: 6vw;
+    height: 6vw;
+  }
+}
+footer {
+  height: 8vh;
+  background-color: rgb(240, 87, 45);
+  color: white;
+  padding: 0 3vw;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+footer section.copyright {
+  font-size: 0.8rem;
+}
+footer section.socialMedia {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1.5vw;
+}
+footer section.socialMedia i {
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* Query Mobile */
+@media screen and (max-width: 765px) {
+  footer section.socialMedia {
+    display: none;
+  }
+}
+/* Query Tablet */
+@media screen and (min-width: 766px) and (max-width: 1023px) {
+  footer {
+    height: 6vh;
+  }
+  footer section.socialMedia {
+    gap: 4vw;
+  }
+  footer section.socialMedia i {
+    font-size: 2rem;
+  }
+}
+div.Home section.search {
+  z-index: 5;
+  position: fixed;
+  width: 100%;
+  height: 20vh;
+  background-color: rgb(49, 54, 63);
+  color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5vh;
+}
+div.Home section.search h1 {
+  font-size: 2.2rem;
+}
+div.Home section.search form.searchInputs {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1vw;
+  z-index: 5;
+}
+div.Home section.search form.searchInputs select, div.Home section.search form.searchInputs input {
+  width: 30vw;
+  padding: 1.5vh 3.5vh;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+div.Home section.search form.searchInputs div.react-datepicker-wrapper {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+div.Home section.search form.searchInputs div.react-datepicker button.react-datepicker__navigation {
+  background-color: white;
+  padding: unset;
+}
+div.Home section.search form.searchInputs div.react-datepicker div.react-datepicker__month-container div.react-datepicker__header {
+  background-color: rgb(240, 87, 45);
+}
+div.Home section.search form.searchInputs button {
+  background-color: rgb(240, 87, 45);
+  border: none;
+  color: white;
+  border-radius: 5px;
+  padding: 1.5vh 3.5vw;
+  cursor: pointer;
+  font-weight: bold;
+}
+div.Home section.search form.searchInputs button:hover {
+  background-color: rgb(239, 106, 70);
+}
+div.Home section.buscarTipos, div.Home section.recomendados {
+  padding: 0 3vw;
+}
+div.Home section.buscarTipos h2, div.Home section.recomendados h2 {
+  font-size: 1.8rem;
+  padding: 1.5vh 0;
+  color: rgb(49, 54, 63);
+}
+div.Home section.buscarTipos {
+  padding-top: 20vh;
+}
+div.Home section.buscarTipos .mySwiper {
+  padding: 2vh 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+div.Home section.buscarTipos .mySwiper.mobile {
+  display: none;
+}
+div.Home section.recomendados {
+  padding-bottom: 3vh;
+}
+div.Home section.recomendados section.cards {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 1vw;
+}
+
+/* Query Mobile */
+@media screen and (max-width: 765px) {
+  div.Home section.search {
+    height: 34vh;
+    position: unset;
+  }
+  div.Home section.search h1 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+  div.Home section.search form.searchInputs {
+    flex-direction: column;
+    gap: 2vw;
+  }
+  div.Home section.search form.searchInputs select, div.Home section.search form.searchInputs input, div.Home section.search form.searchInputs button {
+    padding: 1.2vh 3.5vh;
+    width: 94vw;
+  }
+  div.Home section.search form.searchInputs div.react-datepicker {
+    width: 94vw;
+  }
+  div.Home section.search form.searchInputs div.react-datepicker button.react-datepicker__navigation {
+    width: 10vw;
+  }
+  div.Home section.search form.searchInputs div.react-datepicker div.react-datepicker__month-container {
+    width: inherit;
+    border-radius: 5px;
+    height: -moz-fit-content;
+    height: fit-content;
+    background-color: white;
+  }
+  div.Home section.search form.searchInputs div.react-datepicker div.react-datepicker__month-container div.react-datepicker__header div.react-datepicker__current-month {
+    font-size: 1.25rem;
+    color: rgb(25, 27, 29);
+  }
+  div.Home section.search form.searchInputs div.react-datepicker div.react-datepicker__month-container div.react-datepicker__header div.react-datepicker__day-names div.react-datepicker__day-name {
+    font-size: 1.25rem;
+    margin: 1vh;
+  }
+  div.Home section.search form.searchInputs div.react-datepicker div.react-datepicker__month-container div.react-datepicker__month div.react-datepicker__week div.react-datepicker__day {
+    font-size: 1rem;
+    margin: 1vh;
+  }
+  div.Home section.buscarTipos {
+    padding-top: 0;
+    padding-bottom: 2vh;
+  }
+  div.Home section.buscarTipos .mySwiper.desktop {
+    display: none;
+  }
+  div.Home section.buscarTipos .mySwiper.mobile {
+    display: flex;
+  }
+  div.Home section.recomendados {
+    background-color: rgb(240, 87, 45);
+  }
+  div.Home section.recomendados h2.title {
+    color: white;
+  }
+  div.Home section.recomendados section.cards {
+    flex-direction: column;
+    gap: 2vh;
+  }
+}
+/* Query Tablet */
+@media screen and (min-width: 766px) and (max-width: 1023px) {
+  div.Home section.search {
+    position: unset;
+  }
+  div.Home section.search h1 {
+    font-size: 1.8rem;
+  }
+  div.Home section.search form.searchInputs {
+    gap: 2vw;
+  }
+  div.Home section.search form.searchInputs select, div.Home section.search form.searchInputs input {
+    width: 38vw;
+  }
+  div.Home section.buscarTipos {
+    padding-top: 0;
+  }
+  div.Home section.buscarTipos .mySwiper.desktop {
+    display: none;
+  }
+  div.Home section.buscarTipos .mySwiper.mobile {
+    display: flex;
+  }
+  div.Home section.recomendados section.cards {
+    flex-direction: column;
+    gap: 2vh;
+  }
+}
+div.CrearCuenta {
+  width: 100vw;
+  min-height: 72vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+div.CrearCuenta h1 {
+  font-size: 1.6rem;
+  color: rgb(240, 87, 45);
+  padding: 3vh 0;
+}
+div.CrearCuenta form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3vh;
+}
+div.CrearCuenta form span.error {
+  color: hsl(0, 100%, 66%);
+}
+div.CrearCuenta form section {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+}
+div.CrearCuenta form section label {
+  font-size: 0.9rem;
+  text-align: left;
+  padding-bottom: 1vh;
+  color: rgb(49, 54, 63);
+}
+div.CrearCuenta form section input {
+  height: 6vh;
+  width: 30vw;
+  border-radius: 6px;
+  border: none;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.1490196078);
+  padding: 0 1vw;
+}
+div.CrearCuenta form section input.errorInput {
+  border: 1px solid hsl(0, 100%, 66%);
+}
+div.CrearCuenta form div.nombreApellido {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1vw;
+}
+div.CrearCuenta form div.nombreApellido input {
+  width: 14.5vw;
+}
+div.CrearCuenta form button {
+  margin-top: 4vh;
+  height: 6vh;
+  width: 15vw;
+  background-color: rgb(240, 87, 45);
+  color: white;
+  border: none;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1215686275);
+  border-radius: 6px;
+  cursor: pointer;
+}
+div.CrearCuenta form h3 {
+  font-size: 1.2rem;
+  color: rgb(49, 54, 63);
+}
+div.CrearCuenta form h3 span a {
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: rgb(240, 87, 45);
+}
+
+/* Query Mobile */
+@media screen and (max-width: 765px) {
+  div.CrearCuenta h1 {
+    margin-bottom: 3vh;
+    padding-bottom: 0;
+  }
+  div.CrearCuenta form section input {
+    width: 70vw;
+  }
+  div.CrearCuenta form div.nombreApellido input {
+    width: 35vw;
+  }
+  div.CrearCuenta form button {
+    width: 70vw;
+  }
+  div.CrearCuenta form h3 {
+    font-size: 0.8rem;
+  }
+}
+/* Query Tablet */
+@media screen and (min-width: 766px) and (max-width: 1023px) {
+  div.CrearCuenta h1 {
+    font-size: 1.8rem;
+  }
+  div.CrearCuenta form section input {
+    width: 60vw;
+  }
+  div.CrearCuenta form div.nombreApellido input {
+    width: 30vw;
+  }
+  div.CrearCuenta form button {
+    width: 40vw;
+  }
+  div.CrearCuenta form h3 {
+    font-size: 0.8rem;
+  }
+}
+div.IniciarSesion {
+  width: 100vw;
+  min-height: 72vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+div.IniciarSesion h1 {
+  font-size: 1.6rem;
+  color: rgb(240, 87, 45);
+  padding-bottom: 3vh;
+}
+div.IniciarSesion form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2vh;
+}
+div.IniciarSesion form span.error {
+  color: hsl(0, 100%, 66%);
+}
+div.IniciarSesion form section {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+div.IniciarSesion form section label {
+  font-size: 0.9rem;
+  text-align: left;
+  padding-bottom: 1vh;
+  color: rgb(49, 54, 63);
+}
+div.IniciarSesion form section input {
+  height: 6vh;
+  width: 30vw;
+  border-radius: 6px;
+  border: none;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.1490196078);
+  padding: 0 1vw;
+}
+div.IniciarSesion form section input.errorInput {
+  border: 1px solid hsl(0, 100%, 66%);
+}
+div.IniciarSesion form button {
+  margin-top: 4vh;
+  height: 6vh;
+  width: 15vw;
+  background-color: rgb(240, 87, 45);
+  color: white;
+  border: none;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1215686275);
+  border-radius: 6px;
+  cursor: pointer;
+}
+div.IniciarSesion form h3 {
+  font-size: 1.2rem;
+  color: rgb(49, 54, 63);
+}
+div.IniciarSesion form h3 span a {
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: rgb(240, 87, 45);
+}
+
+/* Query Mobile */
+@media screen and (max-width: 765px) {
+  div.IniciarSesion h1 {
+    padding-bottom: 18vh;
+  }
+  div.IniciarSesion form section input {
+    width: 70vw;
+  }
+  div.IniciarSesion form button {
+    width: 70vw;
+  }
+  div.IniciarSesion form h3 {
+    font-size: 0.8rem;
+  }
+}
+/* Query Tablet */
+@media screen and (min-width: 766px) and (max-width: 1023px) {
+  div.IniciarSesion h1 {
+    font-size: 1.8rem;
+  }
+  div.IniciarSesion form section input {
+    width: 60vw;
+  }
+  div.IniciarSesion form button {
+    width: 40vw;
+  }
+  div.IniciarSesion form h3 {
+    font-size: 0.8rem;
+  }
+}
+div.CardProducto {
+  width: 46.4vw;
+  height: 40vh;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  background-color: white;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+  overflow: hidden;
+  transition: all 0.3s ease-out;
+}
+div.CardProducto section.img {
+  border-radius: inherit;
+  height: inherit;
+  width: 48%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+div.CardProducto section.img img {
+  width: 100%;
+  border-radius: inherit;
+  height: inherit;
+}
+div.CardProducto section.img i {
+  color: white;
+  position: relative;
+  font-size: 1.8rem;
+  bottom: 39vh;
+  left: 19.6vw;
+  cursor: pointer;
+}
+div.CardProducto section.img .bkgEffect {
+  background-color: rgb(246, 232, 229);
+  width: 2vh;
+  height: 2vh;
+  bottom: 44.6vh;
+  left: 21.25vw;
+  position: relative;
+  transition: all 0.3s ease-out;
+  z-index: -1;
+}
+div.CardProducto section.info {
+  height: inherit;
+  border-radius: inherit;
+  width: 52%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1vh;
+}
+div.CardProducto section.info section.dataCardProducto {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: rgb(49, 54, 63);
+}
+div.CardProducto section.info a {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  text-decoration: none;
+  width: 100%;
+  height: 6vh;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(240, 87, 45);
+  color: white;
+  cursor: pointer;
+}
+div.CardProducto section.info a:hover {
+  opacity: 0.8;
+}
+div.CardProducto:hover {
+  transition: all 0.3s ease-out;
+  box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.2509803922);
+  transform: translateY(-0.75vh);
+}
+div.CardProducto:hover section.img div.bkgEffect {
+  width: 25.2vw;
+  height: 40.1vh;
+  border-radius: 0 10px 10px 0;
+}
+
+/* Query Mobile */
+@media screen and (max-width: 765px) {
+  div.CardProducto {
+    width: 94vw;
+    height: 60vh;
+    flex-direction: column;
+  }
+  div.CardProducto section.img {
+    width: inherit;
+    height: 48%;
+  }
+  div.CardProducto section.img img {
+    height: 100%;
+  }
+  div.CardProducto section.img i {
+    bottom: 28vh;
+    left: 82vw;
+  }
+  div.CardProducto section.img .bkgEffect {
+    display: none;
+  }
+  div.CardProducto section.info {
+    width: inherit;
+    height: 52%;
+  }
+  div.CardProducto section.info h2 {
+    padding: 0;
+  }
+}
+/* Query Tablet */
+@media screen and (min-width: 766px) and (max-width: 1023px) {
+  div.CardProducto {
+    width: 94vw;
+    height: 25vh;
+  }
+  div.CardProducto section.img i {
+    bottom: 24vh;
+    left: 38vw;
+  }
+  div.CardProducto section.img .bkgEffect {
+    display: none;
+  }
+  div.CardProducto section.info h2 {
+    font-size: 1.5rem;
+  }
+  div.CardProducto section.info a {
+    height: 4vh;
+  }
+}
+div.CardCategoria {
+  width: 23vw;
+  height: 47vh;
+  border-radius: 10px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+div.CardCategoria img {
+  height: 31vh;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+div.CardCategoria section.info {
+  height: 14vh;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1vh;
+}
+div.CardCategoria section.info h2, div.CardCategoria section.info h3 {
+  color: rgb(49, 54, 63);
+}
+div.CardCategoria section.info h2 {
+  padding: 0;
+  font-size: 1.5rem;
+}
+div.CardCategoria:hover {
+  transition: all 0.3s ease-out;
+  box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.2509803922);
+  transform: translateY(-0.75vh);
+}
+
+/* Query Mobile */
+@media screen and (max-width: 765px) {
+  div.CardCategoria {
+    width: 94vw;
+    height: 40vh;
+  }
+  div.CardCategoria img {
+    height: 30vh;
+  }
+  div.CardCategoria section.info {
+    height: 10vh;
+  }
+  div.CardCategoria section.info h2 {
+    font-size: 1.2rem;
+  }
+  div.CardCategoria section.info h3 {
+    font-size: 1rem;
+  }
+}
+/* Query Tablet */
+@media screen and (min-width: 766px) and (max-width: 1023px) {
+  div.CardCategoria {
+    width: 94vw;
+    height: 48vh;
+  }
+  div.CardCategoria img {
+    height: 40vh;
+  }
+  div.CardCategoria section.info {
+    height: 10vh;
+  }
+}
+article.Producto .productTitle {
+  padding: 1.5vh 3vw;
+  color: rgb(49, 54, 63);
+  font-size: 1.8rem;
+  border-bottom: 2px solid rgb(240, 87, 45);
+  padding-bottom: 1vh;
+}
+article.Producto section.headerProducto {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100vw;
+  background-color: rgb(240, 87, 45);
+  color: white;
+  height: 8vh;
+  padding: 0 3vw;
+}
+article.Producto section.headerProducto h1 {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+article.Producto section.headerProducto a i {
+  font-size: 2.5rem;
+  color: white;
+  text-decoration: none;
+}
+article.Producto section.locationProducto {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100vw;
+  height: 8vh;
+  background-color: rgb(49, 54, 63);
+  color: white;
+  padding: 0 3vw;
+}
+article.Producto section.locationProducto div:nth-child(1) {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: left;
+}
+article.Producto section.locationProducto div i {
+  margin-right: 1vw;
+}
+article.Producto section.imagesProducto {
+  position: relative;
+  padding: 1.5vw 3vw;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1vw;
+  height: 60vh;
+  width: 100vw;
+}
+article.Producto section.imagesProducto img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+}
+article.Producto section.imagesProducto .div1 {
+  grid-area: 1/1/3/3;
+}
+article.Producto section.imagesProducto .div2 {
+  grid-area: 1/3/2/4;
+}
+article.Producto section.imagesProducto .div3 {
+  grid-area: 1/4/2/5;
+}
+article.Producto section.imagesProducto .div4 {
+  grid-area: 2/3/3/4;
+}
+article.Producto section.imagesProducto .div5 {
+  grid-area: 2/4/3/5;
+}
+article.Producto section.imagesProducto button {
+  position: absolute;
+  right: 4vw;
+  bottom: 5vh;
+  padding: 1vh 1vw;
+  border: none;
+  color: white;
+  background-color: rgb(240, 87, 45);
+  border-radius: 5px;
+  cursor: pointer;
+}
+article.Producto .mySwiper {
+  display: none;
+}
+article.Producto section.descriptionProducto {
+  padding: 1vh 3vw;
+  color: rgb(49, 54, 63);
+}
+article.Producto section.caractProducto div.iconsCaract {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 3vw;
+  padding: 5vh 3vw;
+}
+article.Producto section.caractProducto div.iconsCaract span {
+  color: rgb(49, 54, 63);
+}
+article.Producto section.caractProducto div.iconsCaract span i {
+  font-size: 1.6rem;
+  color: rgb(240, 87, 45);
+  padding-right: 1vw;
+}
+article.Producto section.caractProducto div.iconsCaract .div1 {
+  grid-area: 1/1/2/2;
+}
+article.Producto section.caractProducto div.iconsCaract .div2 {
+  grid-area: 1/2/2/3;
+}
+article.Producto section.caractProducto div.iconsCaract .div3 {
+  grid-area: 1/3/2/4;
+}
+article.Producto section.caractProducto div.iconsCaract .div4 {
+  grid-area: 1/4/2/5;
+}
+article.Producto section.caractProducto div.iconsCaract .div5 {
+  grid-area: 2/1/3/2;
+}
+article.Producto section.caractProducto div.iconsCaract .div6 {
+  grid-area: 2/2/3/3;
+}
+article.Producto section.caractProducto div.iconsCaract .div7 {
+  grid-area: 2/3/3/4;
+}
+article.Producto section.politicProducto section {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 3vw;
+  padding: 5vh 3vw;
+}
+article.Producto section.politicProducto section div {
+  width: 25vw;
+  color: rgb(49, 54, 63);
+}
+article.Producto section.politicProducto section div h3 {
+  font-size: 1.3rem;
+  padding-bottom: 2vh;
+}
+article.Producto section.politicProducto section div ul {
+  list-style-type: none;
+}
+article.Producto section.politicProducto section div ul li {
+  padding: 1vh 0;
+}
+article.Producto section.disponibilidad {
+  padding: 3vh 3vw;
+  background-color: rgb(49, 54, 63);
+}
+article.Producto section.disponibilidad h2 {
+  color: white;
+  font-size: 1.8rem;
+}
+article.Producto section.disponibilidad div.container {
+  padding-top: 3vh;
+  gap: 3vw;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+article.Producto section.disponibilidad div.container .calendar {
+  height: 52vh;
+  width: 60vw;
+  border-radius: 5px;
+  background-color: rgb(223, 228, 234);
+}
+article.Producto section.disponibilidad div.container .calendar .wrap .controlWrap .controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  margin: 3vh;
+}
+article.Producto section.disponibilidad div.container .calendar .wrap .controlWrap .controls .btn {
+  font-size: 18px;
+  border: none;
+  padding: 13px 20px;
+  cursor: pointer;
+  border-radius: 10px;
+  color: white;
+  background-color: rgb(240, 87, 45);
+}
+article.Producto section.disponibilidad div.container .calendar .wrap .controlWrap .controls .btn:hover {
+  opacity: 0.8;
+}
+article.Producto section.disponibilidad div.container .calendar .wrap .controlWrap .controls .btn.back::before {
+  content: "< ";
+}
+article.Producto section.disponibilidad div.container .calendar .wrap .controlWrap .controls .btn.next::after {
+  content: " >";
+}
+article.Producto section.disponibilidad div.container .calendar .wrap .year {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+article.Producto section.disponibilidad div.container .calendar .wrap .year .month {
+  padding: 0 10px;
+  margin: 0 0 20px;
+  box-sizing: border-box;
+  width: 40%;
+}
+article.Producto section.disponibilidad div.container .calendar .wrap .year .month .content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+article.Producto section.disponibilidad div.container .calendar .wrap .year .month .monthName {
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 0 auto 20px;
+}
+article.Producto section.disponibilidad div.container .calendar .wrap .year .month .dayOfTheWeek .day {
+  font-weight: 800;
+}
+article.Producto section.disponibilidad div.container .calendar .wrap .year .month .day {
+  width: 14.1666666667%;
+  text-align: center;
+  padding: 6px;
+  box-sizing: border-box;
+}
+article.Producto section.disponibilidad div.container .calendar .wrap .year .month .day.booked {
+  opacity: 0.4;
+}
+article.Producto section.disponibilidad div.container .calendar .wrap .year .month .day:not(.booked) {
+  cursor: pointer;
+}
+article.Producto section.disponibilidad div.container .calendar.singleCol {
+  display: none;
+}
+article.Producto section.disponibilidad div.container .reserva {
+  background-color: rgb(223, 228, 234);
+  padding: 1.5vw;
+  border-radius: 5px;
+  color: rgb(25, 27, 29);
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+}
+article.Producto section.disponibilidad div.container .reserva a, article.Producto section.disponibilidad div.container .reserva button {
+  background-color: rgb(240, 87, 45);
+  text-decoration: none;
+  text-align: center;
+  border: none;
+  color: white;
+  width: 100%;
+  border-radius: 5px;
+  padding: 1.5vh 0;
+  margin-top: 1vh;
+  cursor: pointer;
+}
+article.Producto section.disponibilidad div.container .reserva a:hover, article.Producto section.disponibilidad div.container .reserva button:hover {
+  opacity: 0.8;
+}
+
+/* Query Mobile */
+@media screen and (max-width: 765px) {
+  article.Producto section.headerProducto {
+    height: 10vh;
+  }
+  article.Producto section.imagesProducto {
+    display: none;
+  }
+  article.Producto .mySwiper {
+    display: flex;
+    height: 40vh;
+  }
+  article.Producto .mySwiper .swiper-wrapper .swiper-slide img {
+    width: 100%;
+    height: inherit;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  article.Producto .mySwiper .swiper-pagination {
+    color: white;
+  }
+  article.Producto section.caractProducto h2 {
+    font-size: 1.3rem;
+  }
+  article.Producto section.caractProducto div.iconsCaract {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(7, 1fr);
+  }
+  article.Producto section.caractProducto div.iconsCaract .div2 {
+    grid-area: 2/1/3/2;
+  }
+  article.Producto section.caractProducto div.iconsCaract .div3 {
+    grid-area: 3/1/4/2;
+  }
+  article.Producto section.caractProducto div.iconsCaract .div4 {
+    grid-area: 4/1/5/2;
+  }
+  article.Producto section.caractProducto div.iconsCaract .div5 {
+    grid-area: 5/1/6/2;
+  }
+  article.Producto section.caractProducto div.iconsCaract .div6 {
+    grid-area: 6/1/7/2;
+  }
+  article.Producto section.caractProducto div.iconsCaract .div7 {
+    grid-area: 7/1/8/2;
+  }
+  article.Producto section.politicProducto section div {
+    width: 90vw;
+  }
+  article.Producto section.disponibilidad div.container {
+    flex-direction: column;
+  }
+  article.Producto section.disponibilidad div.container .calendar.twoCol {
+    display: none;
+  }
+  article.Producto section.disponibilidad div.container .calendar.singleCol {
+    display: block;
+    width: 90vw;
+    height: 48vh;
+  }
+  article.Producto section.disponibilidad div.container .calendar.singleCol .wrap .year {
+    height: 46vh;
+  }
+  article.Producto section.disponibilidad div.container .calendar.singleCol .wrap .year .month {
+    height: inherit;
+    width: inherit;
+  }
+  article.Producto section.disponibilidad div.container .reserva {
+    width: 90vw;
+    align-items: center;
+  }
+}
+/* Query Tablet */
+@media screen and (min-width: 766px) and (max-width: 1023px) {
+  article.Producto section.headerProducto {
+    height: 6vh;
+  }
+  article.Producto section.locationProducto {
+    height: 6vh;
+  }
+  article.Producto section.imagesProducto {
+    display: none;
+  }
+  article.Producto .mySwiper {
+    display: flex;
+    height: 50vh;
+  }
+  article.Producto .mySwiper .swiper-wrapper .swiper-slide img {
+    width: 100%;
+    height: inherit;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  article.Producto .mySwiper .swiper-pagination {
+    color: white;
+  }
+  article.Producto section.caractProducto h2 {
+    font-size: 1.4rem;
+  }
+  article.Producto section.caractProducto div.iconsCaract {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+  article.Producto section.caractProducto div.iconsCaract .div3 {
+    grid-area: 2/1/3/2;
+  }
+  article.Producto section.caractProducto div.iconsCaract .div4 {
+    grid-area: 2/2/3/3;
+  }
+  article.Producto section.caractProducto div.iconsCaract .div5 {
+    grid-area: 3/1/4/2;
+  }
+  article.Producto section.caractProducto div.iconsCaract .div6 {
+    grid-area: 3/2/4/3;
+  }
+  article.Producto section.caractProducto div.iconsCaract .div7 {
+    grid-area: 4/1/5/2;
+  }
+  article.Producto section.politicProducto section div {
+    width: 40vw;
+  }
+  article.Producto section.disponibilidad div.container {
+    flex-direction: column;
+  }
+  article.Producto section.disponibilidad div.container .calendar.twoCol {
+    width: 90vw;
+    height: 40vh;
+  }
+  article.Producto section.disponibilidad div.container .calendar.singleCol {
+    display: none;
+  }
+  article.Producto section.disponibilidad div.container .reserva {
+    width: 90vw;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+div.Reserva .productTitle {
+  padding: 1.5vh 3vw;
+  color: rgb(49, 54, 63);
+  font-size: 1.8rem;
+  border-bottom: 2px solid rgb(240, 87, 45);
+  padding-bottom: 1vh;
+}
+div.Reserva section.headerProducto {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100vw;
+  background-color: rgb(240, 87, 45);
+  color: white;
+  height: 8vh;
+  padding: 0 3vw;
+}
+div.Reserva section.headerProducto h1 {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+div.Reserva section.headerProducto a i {
+  font-size: 2.5rem;
+  color: white;
+  text-decoration: none;
+}
+div.Reserva form.dataReserva {
+  padding: 2vh 0;
+  display: grid;
+  grid-template-columns: 1.75fr 1fr;
+  grid-template-rows: 0.3fr 0.5fr 0.2fr;
+}
+div.Reserva form.dataReserva h2.title {
+  font-size: 1.8rem;
+  color: rgb(49, 54, 63);
+  align-self: flex-start;
+  width: 100%;
+  padding: 0 0 1.5vh 1.8vh;
+}
+div.Reserva form.dataReserva .div1 {
+  grid-area: 1/1/2/2;
+}
+div.Reserva form.dataReserva .div2 {
+  grid-area: 2/1/3/2;
+}
+div.Reserva form.dataReserva .div3 {
+  grid-area: 3/1/4/2;
+}
+div.Reserva form.dataReserva .div4 {
+  grid-area: 1/2/4/3;
+}
+div.Reserva form.dataReserva section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1.5vh;
+}
+div.Reserva form.dataReserva section div.reservaContent {
+  width: 97%;
+  background-color: white;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+  border-radius: 10px;
+  padding: 2.5vh;
+}
+div.Reserva form.dataReserva section.datosUsuario div.inputs {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+div.Reserva form.dataReserva section.datosUsuario div.inputs div {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 50%;
+  padding: 1vh;
+  margin: 0.8vh 0;
+}
+div.Reserva form.dataReserva section.datosUsuario div.inputs div label {
+  color: rgb(49, 54, 63);
+  padding: 0 0 1vh 0;
+  font-weight: bold;
+}
+div.Reserva form.dataReserva section.datosUsuario div.inputs div input {
+  width: 98%;
+  height: 6vh;
+  border-radius: 5px;
+  padding: 1.5vh;
+  border: 1px solid grey;
+}
+div.Reserva form.dataReserva section.datosUsuario div.inputs div input:disabled {
+  background-color: rgb(223, 228, 234);
+}
+div.Reserva form.dataReserva section.fechaReserva {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+div.Reserva form.dataReserva section.fechaReserva div.calMobile {
+  display: none;
+}
+div.Reserva form.dataReserva section.fechaReserva div.react-datepicker.calDesktop {
+  width: 60vw;
+  height: 46vh;
+  font-size: 1.25rem;
+}
+div.Reserva form.dataReserva section.fechaReserva div.react-datepicker.calDesktop button.react-datepicker__navigation {
+  top: 2.5vh;
+  width: 6vh;
+  height: 6vh;
+  border-radius: 50px;
+}
+div.Reserva form.dataReserva section.fechaReserva div.react-datepicker.calDesktop button.react-datepicker__navigation span::before {
+  height: 2.5vh;
+  width: 2.5vh;
+  left: -1.75vh;
+  top: 0.5vh;
+  border-color: rgb(25, 27, 29);
+}
+div.Reserva form.dataReserva section.fechaReserva div.react-datepicker.calDesktop button.react-datepicker__navigation.react-datepicker__navigation--previous {
+  left: 1.5vh;
+}
+div.Reserva form.dataReserva section.fechaReserva div.react-datepicker.calDesktop button.react-datepicker__navigation.react-datepicker__navigation--previous span::before {
+  left: -1vh;
+}
+div.Reserva form.dataReserva section.fechaReserva div.react-datepicker.calDesktop button.react-datepicker__navigation.react-datepicker__navigation--next {
+  right: 1.5vh;
+}
+div.Reserva form.dataReserva section.fechaReserva div.react-datepicker.calDesktop div.react-datepicker__month-container {
+  width: 50%;
+}
+div.Reserva form.dataReserva section.fechaReserva div.react-datepicker.calDesktop div.react-datepicker__month-container:nth-child(5) div.react-datepicker__header {
+  border-top-right-radius: 0;
+}
+div.Reserva form.dataReserva section.fechaReserva div.react-datepicker.calDesktop div.react-datepicker__month-container:nth-child(6) div.react-datepicker__header {
+  border-top-left-radius: 0;
+}
+div.Reserva form.dataReserva section.fechaReserva div.react-datepicker.calDesktop div.react-datepicker__month-container div.react-datepicker__header {
+  background-color: rgb(240, 87, 45);
+}
+div.Reserva form.dataReserva section.fechaReserva div.react-datepicker.calDesktop div.react-datepicker__month-container div.react-datepicker__header div.react-datepicker__current-month {
+  font-size: 1.25rem;
+  color: rgb(25, 27, 29);
+}
+div.Reserva form.dataReserva section.fechaReserva div.react-datepicker.calDesktop div.react-datepicker__month-container div.react-datepicker__header div.react-datepicker__day-names div.react-datepicker__day-name {
+  font-size: 1.25rem;
+  margin: 1vh;
+}
+div.Reserva form.dataReserva section.fechaReserva div.react-datepicker.calDesktop div.react-datepicker__month-container div.react-datepicker__month div.react-datepicker__week div.react-datepicker__day {
+  font-size: 1.25rem;
+  margin: 1vh;
+}
+div.Reserva form.dataReserva section.horario h3 {
+  color: rgb(49, 54, 63);
+  margin-bottom: 1.5vh;
+}
+div.Reserva form.dataReserva section.horario div.inputs {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: rgb(49, 54, 63);
+  gap: 1vh;
+}
+div.Reserva form.dataReserva section.horario div.inputs select {
+  width: 50%;
+  height: 5vh;
+  padding: 0 1.5vh;
+}
+div.Reserva form.dataReserva section.reservaInfo {
+  justify-self: center;
+  align-self: center;
+  width: 90%;
+  background-color: white;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+  border-radius: 10px;
+  margin-top: 6vh;
+  height: 92%;
+  padding: 0;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+div.Reserva form.dataReserva section.reservaInfo h1 {
+  font-size: 1.8rem;
+  color: rgb(49, 54, 63);
+  width: 100%;
+  padding: 2.5vh;
+}
+div.Reserva form.dataReserva section.reservaInfo div.imagen {
+  width: 100%;
+  height: 40vh;
+}
+div.Reserva form.dataReserva section.reservaInfo div.imagen img {
+  width: inherit;
+  height: inherit;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+div.Reserva form.dataReserva section.reservaInfo div.productInfo {
+  padding: 2.5vh 2.5vh 7vh 2.5vh;
+}
+div.Reserva form.dataReserva section.reservaInfo div.productInfo h2 {
+  font-size: 1.6rem;
+  color: rgb(49, 54, 63);
+  padding: 1vh 0;
+}
+div.Reserva form.dataReserva section.reservaInfo div.productInfo h3:nth-child(1) {
+  color: grey;
+  font-size: 1.3rem;
+}
+div.Reserva form.dataReserva section.reservaInfo div.productInfo h3:nth-child(3) {
+  color: rgb(49, 54, 63);
+}
+div.Reserva form.dataReserva section.reservaInfo div.productInfo i {
+  font-size: 1rem;
+  padding-right: 1vh;
+}
+div.Reserva form.dataReserva section.reservaInfo div.fechasReserva {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  color: rgb(49, 54, 63);
+  padding: 2.5vh;
+}
+div.Reserva form.dataReserva section.reservaInfo div.fechasReserva section {
+  width: inherit;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid grey;
+  padding: 2.5vh;
+}
+div.Reserva form.dataReserva section.reservaInfo div.fechasReserva section.checkin {
+  border-top: 1px solid grey;
+}
+div.Reserva form.dataReserva section.reservaInfo button {
+  background-color: rgb(240, 87, 45);
+  text-decoration: none;
+  text-align: center;
+  border: none;
+  color: white;
+  width: 94%;
+  align-self: center;
+  border-radius: 5px;
+  padding: 1.5vh 0;
+  margin-top: 7vh;
+  height: 10vh;
+  cursor: pointer;
+}
+div.Reserva form.dataReserva section.reservaInfo button:hover {
+  opacity: 0.8;
+}
+div.Reserva section.politicProducto section {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 3vw;
+  padding: 5vh 3vw;
+}
+div.Reserva section.politicProducto section div {
+  width: 25vw;
+  color: rgb(49, 54, 63);
+}
+div.Reserva section.politicProducto section div h3 {
+  font-size: 1.3rem;
+  padding-bottom: 2vh;
+}
+div.Reserva section.politicProducto section div ul {
+  list-style-type: none;
+}
+div.Reserva section.politicProducto section div ul li {
+  padding: 1vh 0;
+}
+
+/* Query Mobile */
+@media screen and (max-width: 765px) {
+  div.Reserva section.headerProducto {
+    height: 10vh;
+  }
+  div.Reserva form.dataReserva {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+  div.Reserva form.dataReserva h2.title {
+    font-size: 1.5rem;
+  }
+  div.Reserva form.dataReserva section {
+    width: 100%;
+  }
+  div.Reserva form.dataReserva section.datosUsuario div.inputs {
+    flex-direction: column;
+  }
+  div.Reserva form.dataReserva section.datosUsuario div.inputs div {
+    width: 100%;
+    margin: 0;
+  }
+  div.Reserva form.dataReserva section.datosUsuario div.inputs div input {
+    width: 90%;
+  }
+  div.Reserva form.dataReserva section.fechaReserva div.react-datepicker.calMobile {
+    display: initial;
+    width: 100%;
+  }
+  div.Reserva form.dataReserva section.fechaReserva div.react-datepicker.calMobile button.react-datepicker__navigation {
+    border-radius: 50px;
+    width: 8vw;
+    height: 8vw;
+  }
+  div.Reserva form.dataReserva section.fechaReserva div.react-datepicker.calMobile button.react-datepicker__navigation.react-datepicker__navigation--previous {
+    left: -88vw;
+  }
+  div.Reserva form.dataReserva section.fechaReserva div.react-datepicker.calMobile button.react-datepicker__navigation.react-datepicker__navigation--next {
+    right: 1.6vh;
+  }
+  div.Reserva form.dataReserva section.fechaReserva div.react-datepicker.calMobile div.react-datepicker__month-container {
+    width: 90vw;
+    border-radius: 5px;
+    height: -moz-fit-content;
+    height: fit-content;
+    background-color: white;
+  }
+  div.Reserva form.dataReserva section.fechaReserva div.react-datepicker.calMobile div.react-datepicker__month-container div.react-datepicker__header {
+    background-color: rgb(240, 87, 45);
+  }
+  div.Reserva form.dataReserva section.fechaReserva div.react-datepicker.calMobile div.react-datepicker__month-container div.react-datepicker__header div.react-datepicker__current-month {
+    font-size: 1.25rem;
+    color: rgb(25, 27, 29);
+  }
+  div.Reserva form.dataReserva section.fechaReserva div.react-datepicker.calMobile div.react-datepicker__month-container div.react-datepicker__header div.react-datepicker__day-names div.react-datepicker__day-name {
+    font-size: 1.25rem;
+    margin: 1vh;
+  }
+  div.Reserva form.dataReserva section.fechaReserva div.react-datepicker.calMobile div.react-datepicker__month-container div.react-datepicker__month div.react-datepicker__week div.react-datepicker__day {
+    font-size: 1rem;
+    margin: 1vh;
+  }
+  div.Reserva form.dataReserva section.fechaReserva div.calDesktop {
+    display: none;
+  }
+  div.Reserva form.dataReserva section.horario div.inputs select {
+    width: 100%;
+  }
+  div.Reserva form.dataReserva section.reservaInfo {
+    margin-top: 2vh;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  div.Reserva form.dataReserva section.reservaInfo h1 {
+    font-size: 1.5rem;
+  }
+  div.Reserva form.dataReserva section.reservaInfo div.productInfo {
+    padding: 2.5vh;
+  }
+  div.Reserva form.dataReserva section.reservaInfo button {
+    margin: 0 0 2vh 0;
+  }
+  div.Reserva section.politicProducto section div {
+    width: 90vw;
+  }
+}
+/* Query Tablet */
+@media screen and (min-width: 766px) and (max-width: 1023px) {
+  div.Reserva section.headerProducto {
+    height: 6vh;
+  }
+  div.Reserva form.dataReserva {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+  div.Reserva form.dataReserva section {
+    width: 100%;
+  }
+  div.Reserva form.dataReserva section.fechaReserva div.react-datepicker.calDesktop {
+    width: 100%;
+    height: 38vh;
+  }
+  div.Reserva form.dataReserva section.fechaReserva div.react-datepicker.calDesktop button.react-datepicker__navigation {
+    width: 3.75vh;
+    height: 3.75vh;
+    top: 0.6vh;
+  }
+  div.Reserva form.dataReserva section.fechaReserva div.react-datepicker.calDesktop button.react-datepicker__navigation span::before {
+    height: 1.75vh;
+    width: 1.75vh;
+  }
+  div.Reserva form.dataReserva section.fechaReserva div.react-datepicker.calDesktop button.react-datepicker__navigation.react-datepicker__navigation--previous span::before {
+    left: -0.75vh;
+  }
+  div.Reserva form.dataReserva section.fechaReserva div.react-datepicker.calDesktop button.react-datepicker__navigation.react-datepicker__navigation--next span::before {
+    left: -1.1vh;
+  }
+  div.Reserva form.dataReserva section.reservaInfo {
+    width: 94%;
+    height: 48vh;
+    margin-top: 2vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 0.35fr 1fr 1fr 0.35fr;
+  }
+  div.Reserva form.dataReserva section.reservaInfo h1 {
+    grid-area: 1/1/2/3;
+    padding: 1vh 1.5vh 0 1.5vh;
+  }
+  div.Reserva form.dataReserva section.reservaInfo div.imagen {
+    grid-area: 2/1/6/2;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+  }
+  div.Reserva form.dataReserva section.reservaInfo div.imagen img {
+    width: 92%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 5px;
+  }
+  div.Reserva form.dataReserva section.reservaInfo div.productInfo {
+    grid-area: 2/2/3/3;
+    padding: 0 2.5vh;
+  }
+  div.Reserva form.dataReserva section.reservaInfo div.fechasReserva {
+    grid-area: 3/2/4/3;
+    padding: 0 2.5vh;
+  }
+  div.Reserva form.dataReserva section.reservaInfo button {
+    grid-area: 4/2/5/3;
+    margin: 0 2.5vh 2vh;
+    width: 86%;
+    align-self: center;
+    height: 5vh;
+  }
+  div.Reserva section.politicProducto section div {
+    width: 40vw;
+  }
+}
+.ReservaExitosa {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  min-height: 82vh;
+}
+.ReservaExitosa section.cardReservaExitosa {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 50vw;
+  height: 44vh;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+  background-color: white;
+  border-radius: 10px;
+  gap: 7%;
+}
+.ReservaExitosa section.cardReservaExitosa i {
+  font-size: 4rem;
+  color: rgb(240, 87, 45);
+}
+.ReservaExitosa section.cardReservaExitosa h2 {
+  color: rgb(240, 87, 45);
+  font-size: 2.3rem;
+}
+.ReservaExitosa section.cardReservaExitosa h3 {
+  color: rgb(25, 27, 29);
+  font-size: 2rem;
+}
+.ReservaExitosa section.cardReservaExitosa a {
+  border: none;
+  text-decoration: none;
+  width: 40%;
+  height: 18%;
+  background-color: rgb(240, 87, 45);
+  color: white;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  border-radius: 5px;
+  font-size: 1.3rem;
+}
+
+/* Query Mobile */
+@media screen and (max-width: 765px) {
+  .ReservaExitosa section.cardReservaExitosa {
+    width: 90%;
+    height: 48vh;
+    gap: 6%;
+  }
+  .ReservaExitosa section.cardReservaExitosa h3 {
+    text-align: center;
+    font-size: 1.7rem;
+  }
+  .ReservaExitosa section.cardReservaExitosa a {
+    height: 14%;
+    width: 70%;
+  }
+}
+/* Query Tablet */
+@media screen and (min-width: 766px) and (max-width: 1023px) {
+  .ReservaExitosa section.cardReservaExitosa {
+    width: 90%;
+    height: 36vh;
+  }
+  .ReservaExitosa section.cardReservaExitosa h3 {
+    font-size: 1.7rem;
+  }
+}
+div.Administracion {
+  padding: 0 0 3vw 0;
+}
+div.Administracion section.adminHeader {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 3vw;
+  height: 8vh;
+  background-color: rgb(49, 54, 63);
+  color: white;
+}
+div.Administracion section.adminHeader h2 {
+  font-size: 1.5rem;
+}
+div.Administracion section.adminHeader i {
+  color: white;
+  font-size: 2.5rem;
+}
+div.Administracion h1 {
+  font-size: 1.75rem;
+  color: rgb(49, 54, 63);
+  padding: 3vh 3vw;
+}
+div.Administracion form {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin: 0 3vw;
+  border-radius: 10px;
+  padding: 2.5vh;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+}
+div.Administracion form div.basicData {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+div.Administracion form div.basicData section {
+  display: flex;
+  align-items: left;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  padding: 1vh;
+}
+div.Administracion form div.basicData section label {
+  text-align: left;
+  color: rgb(49, 54, 63);
+  padding: 0 0 1vh 0;
+  font-weight: bold;
+}
+div.Administracion form div.basicData section input, div.Administracion form div.basicData section select {
+  width: 100%;
+  height: 6vh;
+  border: 1px solid grey;
+  background-color: white;
+  padding: 1.5vh;
+  border-radius: 5px;
+}
+div.Administracion form div.basicData section input:disabled, div.Administracion form div.basicData section select:disabled {
+  background-color: rgb(223, 228, 234);
+}
+div.Administracion form div.basicData section textarea {
+  padding: 1.5vh;
+  border-radius: 5px;
+  border: 1px solid grey;
+  resize: none;
+}
+div.Administracion form div.basicData section.descripcion {
+  width: 100%;
+}
+div.Administracion form div:not(.basicData) {
+  padding: 1vh;
+}
+div.Administracion form h2 {
+  font-size: 1.5rem;
+  color: rgb(49, 54, 63);
+}
+div.Administracion form button[type=submit] {
+  width: 30%;
+  background-color: rgb(240, 87, 45);
+  text-decoration: none;
+  text-align: center;
+  border: none;
+  color: white;
+  align-self: center;
+  border-radius: 5px;
+  padding: 1.5vh 0;
+  height: 8vh;
+  cursor: pointer;
+}
+div.Administracion form button[type=submit]:hover {
+  opacity: 0.8;
+}
+
+/* Query Mobile */
+@media screen and (max-width: 765px) {
+  div.Administracion form div.basicData {
+    flex-direction: column;
+  }
+  div.Administracion form div.basicData section {
+    width: 100%;
+  }
+  div.Administracion form button[type=submit] {
+    width: 100%;
+    height: 6vh;
+  }
+}
+/* Query Tablet */
+@media screen and (min-width: 766px) and (max-width: 1023px) {
+  div.Administracion form div.basicData section input, div.Administracion form div.basicData section select {
+    height: 4vh;
+  }
+  div.Administracion form button[type=submit] {
+    width: 50%;
+    height: 5vh;
+  }
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Quicksand", sans-serif;
+  font-size: 16px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+html body div.App main {
+  min-height: 92vh;
+  background-color: rgb(223, 228, 234);
+  padding-top: 10vh;
+}
+html body div.App .msgLoading {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 2vh;
+  color: rgb(49, 54, 63);
+  background-color: rgb(240, 87, 45);
+  padding: 1vh;
+  border-radius: 5px;
+  animation: animacion_loading 1.5s ease-in-out infinite both;
+}
+@keyframes animacion_loading {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* Query Mobile */
+@media screen and (max-width: 765px) {
+  html {
+    overflow-x: hidden;
+  }
+  html body {
+    overflow-x: hidden;
+    position: relative;
+  }
+}
+/* Query Tablet */
+@media screen and (min-width: 766px) and (max-width: 1023px) {
+  html body div.App main {
+    min-height: 94vh;
+  }
+}/*# sourceMappingURL=App.css.map */

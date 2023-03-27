@@ -1,0 +1,128 @@
+@use "./var";
+
+div.Administracion {
+    padding: 0 0 3vw 0;
+    section.adminHeader {
+        @include var.flex-container(row,space-between,center);
+        padding: 0 3vw;
+        height: 8vh;
+        background-color: var.$grisClaro;
+        color: white;
+        h2 {
+            font-size: 1.5rem;
+        }
+        i {
+            color: white;
+            font-size: 2.5rem;
+        }
+    }
+    h1 {
+        font-size: 1.75rem;
+        color: var.$grisClaro;
+        padding: 3vh 3vw;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        margin: 0 3vw;
+        border-radius: 10px;
+        padding: 2.5vh;
+        box-shadow: 0px 4px 4px 0px #00000040;
+        div.basicData {
+            @include var.flex-container(row,center,center);
+            flex-wrap: wrap;
+            section {
+                @include var.flex-container(column,center,left);
+                width: 50%;
+                padding: 1vh;
+                label {
+                    text-align: left;
+                    color: var.$grisClaro;
+                    padding: 0 0 1vh 0;
+                    font-weight: bold;
+                }
+                input, select {
+                    width: 100%;
+                    height: 6vh;
+                    border: 1px solid grey;
+                    background-color: white;
+                    padding: 1.5vh;
+                    border-radius: 5px;
+                    &:disabled {
+                        background-color: var.$grisBlanco;
+                    }
+                }
+                textarea {
+                    padding: 1.5vh;
+                    border-radius: 5px;
+                    border: 1px solid grey;
+                    resize: none;
+                }
+                &.descripcion {
+                    width: 100%;
+                }
+            }
+        }
+        div:not(.basicData) {
+            padding: 1vh;
+        }
+        h2 {
+            font-size: 1.5rem;
+            color: var.$grisClaro;
+        }
+        button[type='submit'] {
+            width: 30%;
+            background-color: var.$naranja;
+            text-decoration: none;
+            text-align: center;
+            border: none;
+            color: white;
+            align-self: center;
+            border-radius: 5px;
+            padding: 1.5vh 0;
+            height: 8vh;
+            cursor: pointer;
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+}
+
+/* Query Mobile */
+@media screen and (max-width: 765px) { 
+    div.Administracion {
+        form {
+            div.basicData {
+                flex-direction: column;
+                section {
+                    width: 100%;
+                }
+            }
+            button[type='submit'] {
+                width: 100%;
+                height: 6vh;
+            }
+        }
+    }
+}
+
+/* Query Tablet */
+@media screen and (min-width: 766px) and (max-width: 1023px) {
+    div.Administracion {
+        form {
+            div.basicData {
+                section {
+                    input, select {
+                        height: 4vh;
+                    }
+                }
+            }
+            button[type='submit'] {
+                width: 50%;
+                height: 5vh;
+            }
+        }
+    }
+}

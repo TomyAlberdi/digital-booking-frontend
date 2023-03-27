@@ -1,0 +1,92 @@
+@use "./components/navbar";
+@use "./components/footer";
+@use "./components/var";
+@use "./components/home";
+@use "./components/crearCuenta";
+@use "./components/iniciarSesion";
+@use "./components/cardProducto";
+@use "./components/cardCategoria";
+@use "./components/producto";
+@use "./components/reserva";
+@use "./components/reservaExitosa";
+@use "./components/administracion";
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+}
+
+html {
+    scroll-behavior: smooth;
+    body {
+        div.App {
+            main {
+                min-height: 92vh;
+                background-color: var.$grisBlanco;
+                padding-top: 10vh;
+            }
+            .msgLoading {
+                width: fit-content;
+                margin: 2vh;
+                color: var.$grisClaro;
+                background-color: var.$naranja; 
+                padding: 1vh;
+                border-radius: 5px;
+                -webkit-animation: animacion_loading 1.5s ease-in-out infinite both;
+                animation: animacion_loading 1.5s ease-in-out infinite both;
+            }
+        }
+    }
+}
+@-webkit-keyframes animacion_loading {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes animacion_loading {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Query Mobile */
+@media screen and (max-width: 765px) {
+    html {
+        overflow-x: hidden;
+        body {
+            overflow-x: hidden;
+            position: relative;
+        }
+    }
+}
+
+/* Query Tablet */
+@media screen and (min-width: 766px) and (max-width: 1023px) {
+    html {
+        body {
+            div.App {
+                main {
+                    min-height: 94vh;
+                }
+            }
+        }
+
+    }
+}

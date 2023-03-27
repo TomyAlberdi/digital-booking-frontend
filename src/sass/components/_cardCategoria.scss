@@ -1,0 +1,70 @@
+@use "./var";
+
+div.CardCategoria {
+    width: 23vw;
+    height: 47vh;
+    border-radius: 10px;
+    @include var.flex-container(column,flex-start,flex-start);
+    box-shadow: 0px 4px 4px 0px #00000040;
+    background-color: white;
+    cursor: pointer;
+    img {
+        height: 31vh;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 10px 10px 0 0;
+    }
+    section.info {
+        height: 14vh;
+        width: 100%;
+        @include var.flex-container(column,flex-start,flex-start);
+        padding: 1vh;
+        h2,h3 {
+            color: var.$grisClaro;
+        }
+        h2 {
+            padding: 0;
+            font-size: 1.5rem;
+        }
+    }
+    transition: all 0.3s ease-out;
+    &:hover {
+        transition: all 0.3s ease-out;
+        box-shadow: 0px 6px 6px 0px #00000040;
+        transform: translateY(-0.75vh);
+    }
+}
+
+/* Query Mobile */
+@media screen and (max-width: 765px) {
+    div.CardCategoria {
+        width: 94vw;
+        height: 40vh;
+        img {
+            height: 30vh;
+        }
+        section.info {
+            height: 10vh;
+            h2 {
+                font-size: 1.2rem;
+            }
+            h3 {
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+/* Query Tablet */
+@media screen and (min-width: 766px) and (max-width: 1023px) {
+    div.CardCategoria {
+        width: 94vw;
+        height: 48vh;
+        img {
+            height: 40vh;
+        }
+        section.info {
+            height: 10vh;
+        }
+    }
+}

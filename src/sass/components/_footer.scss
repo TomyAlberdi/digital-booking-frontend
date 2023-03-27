@@ -1,0 +1,42 @@
+@use "./var";
+
+footer {
+    height: 8vh;
+    background-color: var.$naranja;
+    color: white;
+    padding: 0 3vw;
+    @include var.flex-container(row,space-between,center);
+    section.copyright {
+        font-size: 0.8rem
+    }
+    section.socialMedia {
+        @include var.flex-container(row,center,center);
+        gap: 1.5vw;
+        i {
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+    }    
+}
+
+/* Query Mobile */
+@media screen and (max-width: 765px) {
+    footer {
+        section.socialMedia {
+            display: none;
+        }
+    }
+}
+
+/* Query Tablet */
+@media screen and (min-width: 766px) and (max-width: 1023px) {
+    footer {
+        height: 6vh;
+        section.socialMedia {
+            gap: 4vw;
+            i {
+                font-size: 2rem;
+            }
+        }
+    }
+}

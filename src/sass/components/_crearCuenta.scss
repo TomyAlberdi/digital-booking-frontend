@@ -1,0 +1,121 @@
+@use "./var";
+
+div.CrearCuenta {
+    width: 100vw;
+    min-height: 72vh;
+    @include var.flex-container(column,center,center);
+    h1 {
+        font-size: 1.6rem;
+        color: var.$naranja;
+        padding: 3vh 0;
+    }
+    form {
+        @include var.flex-container(column,center,center);
+        gap: 3vh;
+        span.error {
+            color: hsl(0, 100%, 66%);
+        }
+        section {
+            @include var.flex-container(column,center,flex-start);
+            label {
+                font-size: 0.9rem;
+                text-align: left;
+                padding-bottom: 1vh;
+                color: var.$grisClaro;
+            }
+            input {
+                height: 6vh;
+                width: 30vw;
+                border-radius: 6px;
+                border: none;
+                box-shadow: 0px 1px 5px 0px #00000026;
+                padding: 0 1vw;
+                &.errorInput {
+                    border: 1px solid hsl(0, 100%, 66%);
+                }
+            }
+        }
+        div.nombreApellido {
+            @include var.flex-container(row,center,center);
+            gap: 1vw;
+            input {
+                width: 14.5vw;
+            }
+        }
+        button {
+            margin-top: 4vh;
+            height: 6vh;
+            width: 15vw;
+            background-color: var.$naranja;
+            color: white;
+            border: none;
+            box-shadow: 0px 2px 4px 0px #0000001F;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        h3 {
+            font-size: 1.2rem;
+            color: var.$grisClaro;
+            span a {
+                font-size: 1.2rem;
+                text-decoration: none;
+                color: var.$naranja;
+            }
+        }
+    }
+}
+
+/* Query Mobile */
+@media screen and (max-width: 765px) {
+    div.CrearCuenta {
+        h1 {
+            margin-bottom: 3vh;
+            padding-bottom: 0;
+        }
+        form {
+            section {
+                input {
+                    width: 70vw;
+                }
+            }
+            div.nombreApellido {
+                input {
+                    width: 35vw;
+                }
+            }
+            button {
+                width: 70vw;
+            }
+            h3 {
+                font-size: 0.8rem;
+            }
+        }
+    }
+}
+
+/* Query Tablet */
+@media screen and (min-width: 766px) and (max-width: 1023px) {
+    div.CrearCuenta {
+        h1 {
+            font-size: 1.8rem;
+        }
+        form {
+            section {
+                input {
+                    width: 60vw;
+                }
+            }
+            div.nombreApellido {
+                input {
+                    width: 30vw;
+                }
+            }
+            button {
+                width: 40vw;
+            }
+            h3 {
+                font-size: 0.8rem;
+            }
+        }
+    }
+}

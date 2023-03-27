@@ -1,0 +1,11 @@
+$naranja: rgba(240, 87, 45, 1);
+$grisClaro: rgba(49, 54, 63, 1);
+$grisOscuro: rgba(25, 27, 29, 1);
+$grisBlanco: rgba(223, 228, 234, 1);
+
+@mixin flex-container ($direction, $space, $items) {
+    display: flex;
+    align-items: $items;
+    flex-direction: $direction;
+    justify-content: $space;    
+}

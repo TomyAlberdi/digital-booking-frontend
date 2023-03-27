@@ -1,0 +1,238 @@
+@use "./var";
+
+header {
+    position: fixed;
+    z-index: 6;
+    width: 100vw;
+    height: 10vh;
+    padding: 0 3vw;
+    @include var.flex-container(row,space-between,center);
+    background-color: white;
+    section.logo {
+        @include var.flex-container(row,center,flex-end);
+        gap: 1vw;
+        a {
+            text-decoration: none;
+        }
+        img {
+            width: 4vw;
+        }
+        h3 {
+            font-size: 1.3rem;
+            font-weight: lighter;
+            font-style: italic;
+            color: var.$grisClaro;
+        }
+    }
+    section.mobileMenuButton {
+        display: none;
+    }
+    section.accountInfoContainer {
+        @include var.flex-container(row,center,center);
+        section.adminMenu {
+            margin-right: 1.5vw;
+            padding: 2vh 1.5vw;
+            @include var.flex-container(row,center,center);
+            border-right: 2px solid var.$naranja;
+            height: 100%;
+            a {
+                text-decoration: none;
+                font-weight: bold;
+                color: var.$grisClaro;
+            }
+        }
+        section.accountInfo {
+            @include var.flex-container(row,center,flex-start);
+            gap: 1vw;
+            div.userIcon {
+                width: 3vw;
+                height: 3vw;
+                @include var.flex-container(row,center,center);
+                padding: 1.4vh;
+                margin-bottom: 1vh;
+                background-color: var.$grisClaro;
+                color: white;
+                border-radius: 50%;
+            }
+            div.nombreUsuario {
+                @include var.flex-container(column,center,flex-start);
+                h3 {
+                    color: var.$naranja;
+                }
+            }
+            i {
+                cursor: pointer;
+            }
+        }
+    }
+    section.account {
+        @include var.flex-container(row,center,flex-end);
+        gap: 1vw;
+        a {
+            text-decoration: none;
+            color: inherit;
+            button {
+                background-color: inherit;
+                border: 1px solid var.$naranja;
+                color: var.$naranja;
+                border-radius: 5px;
+                padding: 1.5vh 3.5vw;
+                cursor: pointer;
+                font-weight: bold;
+            }
+        }
+
+    }
+}
+div.mobileMenu {
+    display: none;
+}
+
+/* Query Mobile */
+@media screen and (max-width: 765px) {
+    header {
+        section.logo {
+            img {
+                width: 18vw;
+            }
+            a:nth-child(2) {
+                display: none;
+            }
+        }
+        section.mobileMenuButton {
+            display: block;
+            padding: 2vh;
+            cursor: pointer;
+            i {
+                font-size: 2rem;
+                color: var.$grisClaro;
+            }
+        }
+        section.account, section.accountInfoContainer {
+            display: none;
+        }
+    }
+    div.mobileMenu {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: -80vw;
+        transition: all 0.3s ease-in;
+        background-color: white;
+        width: 80vw;
+        height: 100vh;
+        z-index: 10;
+        &.open {
+            transition: all 0.3s ease-in;
+            right: 0;
+            position: fixed;
+        }
+        section.menuHeader {
+            height: 30vh;
+            background-color: var.$naranja;
+            @include var.flex-container(column,space-between,flex-start);
+            color: white;
+            div.mobileMenuButton {
+                display: block;
+                padding: 2vh;
+                cursor: pointer;
+                i {
+                    font-size: 2rem;
+                    color: white;
+                }
+            }
+
+            div.mobileAccount {
+                @include var.flex-container(column,flex-end,flex-end);
+                padding: 0 2vw 2vw 0;
+                align-self: flex-end;
+                div.userIcon {
+                    @include var.flex-container(row,center,center);
+                    height: 12vw;
+                    width: 12vw;
+                    padding: 1.4vh;
+                    margin-bottom: 1vh;
+                    background-color: white;
+                    color: var.$grisClaro;
+                    border-radius: 50%;
+                }
+                h3.name {
+                    color: var.$grisClaro;
+                }
+            }
+            h2 {
+                align-self: flex-end;
+                font-size: 1.4rem;
+                padding: 1.4vw;
+            }
+        }
+        section.mobileLogin {
+            padding: 0 2vw;
+            @include var.flex-container(column,flex-start,flex-end);
+            a {
+                text-decoration: none;
+                color: inherit;
+                width: 100%;
+                text-align: end;
+                padding: 2vh 0;
+                &:nth-child(1) {
+                    border-bottom: 1px solid var.$grisClaro;
+                }
+            }
+        }
+        section.menuFooter {
+            @include var.flex-container(column,flex-end,flex-end);
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            padding: 0 3vw;
+            color: var.$grisClaro;
+            h3 {
+                width: inherit;
+                text-align: end;
+                padding-bottom: 1vh;
+                border-bottom: 1px solid var.$grisClaro;
+                span {
+                    color: var.$naranja;
+                    cursor: pointer;
+                }
+            }
+            div.socialMedia {
+                @include var.flex-container(row,flex-end,center);
+                padding: 3vh 0;
+                gap: 2vh;
+                i {
+                    cursor: pointer;
+                    font-size: 1.6rem;
+                }
+            }
+        }
+    }
+}
+
+/* Query Tablet */
+@media screen and (min-width: 766px) and (max-width: 1023px) {
+    header {
+        section.logo {
+            img {
+                width: 10vw;
+            }
+            a:nth-child(2) {
+                display: none;
+            }
+        }
+        section.account button {
+            padding: 1.5vh 6vw;
+        }
+        section.accountInfoContainer {
+            section.accountInfo {
+                div.userIcon {
+                    width: 6vw;
+                    height: 6vw;
+                }
+            }
+        }
+
+    }
+}

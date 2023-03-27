@@ -1,0 +1,71 @@
+@use "./var";
+
+.ReservaExitosa {
+    @include var.flex-container(row,center,center);
+    min-height: 82vh;
+    section.cardReservaExitosa {
+        @include var.flex-container(column,center,center);
+        width: 50vw;
+        height: 44vh;
+        box-shadow: 0px 4px 4px 0px #00000040;
+        background-color: white;
+        border-radius: 10px;
+        gap: 7%;
+        i {
+            font-size: 4rem;
+            color: var.$naranja;
+        }
+        h2 {
+            color: var.$naranja;
+            font-size: 2.3rem;
+        }
+        h3 {
+            color: var.$grisOscuro;
+            font-size: 2rem;
+        }
+        a {
+            border: none;
+            text-decoration: none;
+            width: 40%;
+            height: 18%;
+            background-color: var.$naranja;
+            color: white;
+            box-shadow: 0px 4px 4px 0px #00000040;
+            @include var.flex-container(row,center,center);
+            border-radius: 5px;
+            font-size: 1.3rem;
+        }
+    }
+}
+
+/* Query Mobile */
+@media screen and (max-width: 765px) { 
+    .ReservaExitosa {
+        section.cardReservaExitosa {
+            width: 90%;
+            height: 48vh;
+            gap: 6%;
+            h3 {
+                text-align: center;
+                font-size: 1.7rem;
+            }
+            a {
+                height: 14%;
+                width: 70%;
+            }
+        }
+    }
+}
+
+/* Query Tablet */
+@media screen and (min-width: 766px) and (max-width: 1023px) {
+    .ReservaExitosa {
+        section.cardReservaExitosa {
+            width: 90%;
+            height: 36vh;
+            h3 {
+                font-size: 1.7rem;
+            }
+        }
+    }
+}
